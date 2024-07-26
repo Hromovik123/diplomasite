@@ -1,0 +1,180 @@
+.main-cnt{
+    width: 100%;
+    height: auto;
+    background-color: #4A4A4A;
+}
+
+.grid * {
+    box-sizing: border-box;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+    padding: 20px ;
+}
+
+.filter {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+    padding: 20px 0;
+}
+
+/* Кол-во блоков на разных экранах */
+@media only screen and (max-width: 1200px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+.grid-item {
+    box-shadow: 0 4px 16px #929292;
+    transition: box-shadow .3s;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    background-color: #262626;
+}
+.grid-item .image {
+    height: 200px;
+    overflow: hidden;
+}
+.grid-item .info {
+    position: relative;
+    height: calc(100% - 200px);
+    padding: 16px 14px 80px 14px;
+}
+.grid-item:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
+}
+.grid-item .image img  {
+    transition: transform 280ms ease-in-out;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    object-fit: contain;
+}
+.grid-item:hover .image img  {
+    transform: scale(1.1);
+}
+.info h2 {
+    font-family: 'Mukta', sans-serif;
+    color: #DDDDDD;
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+    text-align: center;
+}
+.info-text p {
+    font-family: 'Mukta', sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: #DDDDDD;
+}
+.info-text p:last-child {
+    margin-bottom: 0;
+}
+.grid-item .button-wrap {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    text-align: center;
+}
+/* Кнопка подробнее */
+.atuin-btn {
+    border-radius: 5px;
+    display: inline-flex;
+    text-decoration: none;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 12px 30px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Mukta', sans-serif;
+    background-color: #D35166;
+    cursor: pointer;
+}
+.atuin-btn:hover,
+.atuin-btn:active,
+.atuin-btn:focus {
+    color: #FFF;
+}
+.atuin-btn:hover{
+    background: #F01938;
+    transition: all 280ms ease-in-out;
+}
+
+
+.atuin-btn:before {
+    top: -6px;
+}
+
+.atuin-btn:hover:after,
+.atuin-btn:hover:before,
+.atuin-btn:active:after,
+.atuin-btn:active:before,
+.atuin-btn:focus:after,
+.atuin-btn:focus:before {
+    width: 100%;
+    left: 0;
+}
+
+
+.border {
+    text-align: center;
+    backdrop-filter: blur(8px);
+    list-style: none;
+    margin: 0; /* Обнуляем значение отступов */
+    padding: 4px; /* Значение полей */
+    }
+.border li {
+    font-family: 'Mukta', sans-serif;
+    display: inline; /* Отображать как строчный элемент */
+    margin-right: 5px; /* Отступ слева */
+    padding: 3px; /* Поля вокруг текста */
+
+}
+.border h3 {
+    font-family: 'Mukta', sans-serif;
+    color: #DDDDDD;
+    font-weight: lighter;
+}
+.border  a {
+    font-family: 'Mukta', sans-serif;
+    color: #DDDDDD;
+    text-align: center;
+    padding: 20px 20px;
+    text-decoration: none;
+    font-size: 25px;
+}
+.border  ul {
+    display: inline-block;
+}
+
+.border a:hover {
+    color: #ffffff;
+    transition-duration: 0.35s;
+}
+
+.selected{
+    background-color: #F01938;
+    border-radius: 5px;
+}
